@@ -36,7 +36,7 @@
       <div class="two"></div>
 
       <div class="twotwo">
-        <h2 class="subtitle">Ordenamiento de Burbuja <br><span style="font-size: 40px;">(Bubble Sort)</span></h2>
+        <h2 class="subtitle">Ordenamiento de Burbuja <br>(Bubble Sort)</h2>
         <p class="info">El ordenamiento por burbuja (Bubble Sort) es un algoritmo de ordenamiento elemental que organiza los elementos de una lista comparando de manera repetitiva pares adyacentes y realizando intercambios si están en el orden incorrecto. Su nombre se debe a la forma en que los elementos más grandes van “flotando” hacia el final de la lista, como si fueran burbujas que ascienden a la superficie.</p>
 		<div class="botonera">
 			<a href="#" class="btn">Conoce los Fundamentos Básicos</a>
@@ -1548,10 +1548,29 @@ ul {
 
     .twotwo {
       grid-column: 1 / 11;
-      grid-row: 8 / 11; ;
+      grid-row: 2 / 11; ;
       border-bottom-left-radius:0 ;
       border-bottom-right-radius: 0;
     }
+
+    .botonera {
+  display: flex;
+  flex-direction: column; /* 👈 Esto los apila verticalmente */
+  align-items: center;     /* Centrado horizontal */
+  gap: 20px;
+  margin: 20px;
+  
+}
+
+.twotwo .subtitle {
+  font-size: 35px;
+  margin: 0;
+}
+
+.twotwo span {
+  font-size: 20px;
+  margin: 0;
+}
 
     .three {
       grid-column: 1 / 11;
