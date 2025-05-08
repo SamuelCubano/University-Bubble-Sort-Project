@@ -1,4 +1,5 @@
 ---
+import Card from "../components/fundamentos.astro";
 ---
 
 <!DOCTYPE html>
@@ -9,6 +10,7 @@
     <title>Metodo de Burbuja | Index | IUJO</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://kit.fontawesome.com/cf1fb60fea.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Oxanium:wght@200..800&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Press+Start+2P&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rouge+Script&display=swap" rel="stylesheet">
   </head>
   <body>
@@ -39,28 +41,21 @@
         <h2 class="subtitle">Ordenamiento de Burbuja <br>(Bubble Sort)</h2>
         <p class="info">El ordenamiento por burbuja (Bubble Sort) es un algoritmo de ordenamiento elemental que organiza los elementos de una lista comparando de manera repetitiva pares adyacentes y realizando intercambios si están en el orden incorrecto. Su nombre se debe a la forma en que los elementos más grandes van “flotando” hacia el final de la lista, como si fueran burbujas que ascienden a la superficie.</p>
 		<div class="botonera">
-			<a href="#" class="btn">Conoce los Fundamentos Básicos</a>
+			<a href="#four" class="btn">Conoce los Fundamentos Básicos</a>
 			<a href="#" class="btn">Continuar</a>
 		  </div>
       </div>
 
       <!-- Sección de Información de la Compañía -->
-      <div class="four"></div>
-
-      <!-- Sección de Imagen de la Localidad de la Compañía -->
-      <div class="five"></div>
-
-      <!-- Sección de Imagen de Consultorio -->
-      <div class="six"></div>
+      <div class="four" id="four"></div>
 
       <!-- Sección de Información de la Localidad de la Compañía -->
-      <div class="seven">
-        <h2 class="subtitle">Centro Lido – El Rosal, Caracas</h2>
-        <p class="info">Ubicado en la Av. Francisco de Miranda, el Centro Lido en El Rosal es un moderno complejo empresarial de alto nivel, ideal para empresas y servicios médicos. Su ubicación estratégica ofrece fácil acceso al transporte público, seguridad, estacionamiento y cercanía a bancos, comercios y hoteles.</p>
-        <h3>Horarios de Atención:</h3>
-        <p class="info">
-          Emergencias: Las 24 horas del día <br><br>
-          Consultas: De Lunes a Sábado de 7:00 am a 7:00 pm</p>
+      <div class="seven" >
+        <h2 class="subtitle" id="seven">Fundamentos Básicos de JavaScript</h2>
+        <p class="info">Aprender estos fundamentos no solo te permite entender cómo se comporta el código, sino que te da las herramientas para pensar como un desarrollador y resolver problemas del mundo real con lógica y creatividad.</p>
+        <Card title="1.   Variables" info="Una variable es un contenedor que guarda un valor. Ese valor puede cambiar durante la ejecución del programa (de ahí el nombre variable). Es como una etiqueta que le pones a una caja para saber qué hay dentro." />
+
+        </Card>
       </div>
 
       <!-- Sección de Slogan -->
@@ -248,6 +243,10 @@
         box-sizing: border-box;
       }
 
+      html {
+        scroll-behavior: smooth;
+      }
+
       body {
         font-family: "Nunito Sans", serif;
         margin: 0;
@@ -312,13 +311,14 @@
         padding: 0;
         font-size: 20px;
         margin: 15px;
+        color: white;
       }
 
       .subtitle {
         font-size: 40px;
         margin: 20px 15px;
-        color: #58a6ff;
-        text-shadow: 1px 2px 2px #e5e5e5;
+        color: #e5e5e5;
+        text-shadow: 1px 1px 10px #e5e5e5;
       }
 
       .twotwo .subtitle {
@@ -396,7 +396,7 @@
 
       .two {
         grid-column: 1 / 22;
-        grid-row: 1 / 16; 
+        grid-row: 1 / 14; 
         background-color: #0d1117;
         background-size: cover;
 
@@ -474,9 +474,13 @@
       }
 
       .seven {
-        grid-column: 12 / 20;
-        grid-row: 19 / 30;
-        
+        grid-column: 5 / 18;
+        grid-row: 16 / 31;
+        text-align: center;
+      }
+
+      .seven p {
+        margin-bottom: 50px;
       }
 
       .eight {

@@ -1,0 +1,99 @@
+---
+const {title} = Astro.props
+const {info} = Astro.props 
+---
+
+<details>
+    <summary>
+      {title}
+      <span class="flecha"><i class="fa-solid fa-arrow-down"></i></span>
+    </summary>
+    <div class="contenido">
+      <hr>
+      <p>{info}</p>
+    </div>
+</details>
+
+<style>
+    .contenido {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease; /* Transición para mostrar/ocultar contenido */
+  text-align: left;
+}
+
+.flecha {
+  transform: rotate(0deg);
+  transition: transform 0.3s ease; /* Transición de la flecha */
+  font-size: 25px;
+}
+
+summary {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+details {
+  background: linear-gradient(to bottom right, #00628b 1%, #0084a2 25%, #00b8bc 100%);
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.541);
+  width: 80%; /* Se ajusta dinámicamente al tamaño de la pantalla */
+  max-width: 1000px; /* Evita que crezca demasiado en pantallas grandes */
+  padding: 20px;
+  color: aliceblue;
+  border-radius: 20px;
+  margin: auto;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: 19px;
+  transition: all 0.3s ease-in-out;
+}
+
+@media (max-width: 600px) {
+
+  details {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  summary, .contenido {
+    font-size: 18px;
+  }
+}
+</style>
+
+<script>
+  // Selecciona todos los elementos <details>
+      const detailsElements = document.querySelectorAll("details");
+  
+  // Itera sobre cada <details> y controla su apertura/cierre
+  detailsElements.forEach(details => {
+    const flecha = details.querySelector(".flecha");
+    const contenido = details.querySelector(".contenido");
+  
+    const summary = details.querySelector("summary");
+    if (summary) {
+      summary.addEventListener("click", (event) => {
+      event.preventDefault(); // Evita el comportamiento nativo de <details>
+  
+      if (details.hasAttribute("open")) {
+        // Ocultar contenido
+        if (contenido) {
+          (contenido as HTMLElement).style.maxHeight = "0";
+        }
+        (flecha as HTMLElement).style.transform = "rotate(0deg)"; // Flecha hacia arriba
+        setTimeout(() => details.removeAttribute("open"), 3000); // Quita "open" después de la transición
+      } else {
+        // Mostrar contenido
+        details.setAttribute("open", "");
+        if (contenido) {
+          (contenido as HTMLElement).style.maxHeight = contenido.scrollHeight + "px"; // Expandir contenido
+        }
+        (flecha as HTMLElement).style.transform = "rotate(180deg)"; // Flecha hacia abajo
+      }
+    });
+  }
+  });
+  
+    </script>
