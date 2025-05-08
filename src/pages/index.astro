@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Index de IMHC</title>
+    <title>Metodo de Burbuja | Index | IUJO</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Oxanium:wght@200..800&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Press+Start+2P&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rouge+Script&display=swap" rel="stylesheet">
@@ -18,33 +18,30 @@
 
       <!-- Header Barra -->
       <header>
-        <p class="sd">Av. Francisco de Miranda, Edif. Centro Lido, torre E piso 12, El Rosal, Caracas 1060, Miranda</p>
+        <p class="sd"><a href="https://github.com/SamuelCubano/University-Bubble-Sort-Project" target="_blank">🖐 Visita nuestro proyecto y apoyanos con una ✨</a></p>
         <div id="elements">
-            <button class="menu-toggle" id="menuToggle">☰</button> <!-- Botón de hamburguesa -->
+            <button class="menu-toggle" id="menuToggle">☰</button>
             <div class="links" id="menu">
-                <button class="close-menu" id="closeMenu">✖</button> <!-- Botón de cerrar -->
-                <a href="/nosotros/">Nosotros</a>
-                <a href="/servicios/">Servicios</a>
-                <a href="/telemedicina/">Telemedicina</a>
-                <a href="/noticias/">Noticias</a>
-                <a href="/contacto/">Contacto</a>
-                <a href="/faqs/">Preguntas Frecuentes</a>
+                <button class="close-menu" id="closeMenu">✖</button>
+                <a href="">Nosotros</a>
+                <a href="">Servicios</a>
+                <a href="">Telemedicina</a>
+                <a href="">Noticias</a>
+                <a href="">Contacto</a>
+                <a href="">Preguntas Frecuentes</a>
             </div>
         </div>
     </header>
 
-      <!-- Sección de Bienvenida -->
       <div class="two"></div>
 
-      <!-- Sección de Información de bienvenida -->
       <div class="twotwo">
-        <h2 class="subtitle">Cuidamos de usted con excelencia.</h2>
-        <p class="info"><span style="padding-left: 30px;"></span>Atención médica rápida, especialistas calificados y tecnología de vanguardia en un solo lugar. <br><br><p class="slogan" style="font-size: 20px; text-align: center;">¡Su bienestar es nuestra prioridad!</p></strong></p>
-      </div>
-
-      <!-- Sección de Slogan -->
-      <div class="three">
-        <h2 class="slogan"><i>"Ofrecemos un ambiente cómodo, seguro y equipado con tecnología avanzada para brindarle una experiencia médica eficiente y de calidad."</i></h2>
+        <h2 class="subtitle">Ordenamiento de Burbuja <br><span style="font-size: 40px;">(Bubble Sort)</span></h2>
+        <p class="info">El ordenamiento por burbuja (Bubble Sort) es un algoritmo de ordenamiento elemental que organiza los elementos de una lista comparando de manera repetitiva pares adyacentes y realizando intercambios si están en el orden incorrecto. Su nombre se debe a la forma en que los elementos más grandes van “flotando” hacia el final de la lista, como si fueran burbujas que ascienden a la superficie.</p>
+		<div class="botonera">
+			<a href="#" class="btn">Conoce los Fundamentos Básicos</a>
+			<a href="#" class="btn">Continuar</a>
+		  </div>
       </div>
 
       <!-- Sección de Información de la Compañía -->
@@ -254,7 +251,7 @@
       body {
         font-family: "Nunito Sans", serif;
         margin: 0;
-        background-color: #e5e5e5;
+        background-color: #161b22;
       }
 
       .wrapper {
@@ -266,7 +263,7 @@
       }
 
       header {
-        background-color: rgba(0, 0, 0, 0.493);
+        background-color: rgba(0, 0, 0, 0);
         color: white;
         margin: 0;
         padding-top: 0;
@@ -282,8 +279,8 @@
       }
 
       header.scrolled {
-        background-color: #e5e5e5; /* Fondo blanco cuando se desplaza */
-        color: black;
+        background-color: #161b22; /* Fondo blanco cuando se desplaza */
+        color: white;
         box-shadow: 0px 6px 5px 0px rgba(0, 0, 0, 0.25);
         -webkit-box-shadow: 0px 6px 5px 0px rgba(0, 0, 0, 0.25);
       }
@@ -291,11 +288,24 @@
       .sd {
         text-align: center;
         margin: 0;
-        color: white;
-        background: linear-gradient(to bottom right, #00628b 1%, #0084a2 25%, #00b8bc 100%);
+        background-color:  #161b22;
         padding-bottom: 10px;
         padding-top: 10px;
+		text-decoration: none;
+		transition: 0.3s ;
+		font-size: 17px;
       }
+
+	  .sd a {
+		color: white;
+		text-decoration: none;
+		transition: 0.3s;
+	  }
+
+	  .sd a:hover {
+		color: #58a6ff;
+		text-decoration: none;
+	  }
 
       .info {
         margin: 0;
@@ -307,14 +317,16 @@
       .subtitle {
         font-size: 40px;
         margin: 20px 15px;
-        color: #00796b;
+        color: #58a6ff;
         text-shadow: 1px 2px 2px #e5e5e5;
       }
 
       .twotwo .subtitle {
-        margin: 20px 15px;
-        color:  #e5e5e5;
-        text-shadow: 1px 2px 2px #00796b;
+		text-align: center;
+		font-size: 50px;
+        margin:  30px;
+        color:  #58a6ff ; 
+        text-shadow: 1px 2px 2px #e5e5e5;
       }
 
       h3 {
@@ -369,7 +381,7 @@
       }
 
       header.scrolled .links a {
-        color: black; /* Color de los enlaces cuando se desplaza */
+        color: white; /* Color de los enlaces cuando se desplaza */
       }
 
 
@@ -385,36 +397,62 @@
       .two {
         grid-column: 1 / 22;
         grid-row: 1 / 16; 
-        background-color: #ade0de;
+        background-color: #0d1117;
         background-size: cover;
 
       }
 
       .twotwo {
-        grid-column: 3 / 10;
-        grid-row: 8 / 13;
+        grid-column: 6 / 17;
+        grid-row: 4 / 13;
         background-color: rgba(0, 0, 0, 0.603);
         color: white;
-        border-top-right-radius: 15px;
-        border-top-left-radius:15px;
+        border-radius: 15px;
       }
 
       .twotwo .subtitle {
-        color:  #e5e5e5;
-        text-shadow: 1px 2px 3px #6cbfc6;
+        color:  white;
+        text-shadow: 1px 1px 10px white;
       }
-      
-      .three {
-        grid-column: 1 / 22;
-        grid-row: 16 / 18;
-        background: linear-gradient(to bottom right, #00628b 1%, #0084a2 25%, #00b8bc 100%);
-        text-align: center ;
-      }
+
+	  .twotwo p {
+		color: #e5e5e5;
+		font-size: 20px;
+		margin: 30px;
+		text-align: center;
+	} 
+
+	.botonera {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin: 20px 0;
+}
+
+.btn {
+  background-color: #061d25;
+  color: #58a6ff;
+  border: solid 1px #58a6ff;
+  padding: 12px 24px;
+  font-size: 25px;
+  border-radius: 225px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.3s ease;
+  display: inline-block;
+  text-align: center;
+}
+
+.btn:hover {
+  background-color: #58a6ff;
+  color: white;
+}
+
 
       .four {
         grid-column: 1 / 22;
-        grid-row: 18 / 31;
-        background-color: #e5e5e5;
+        grid-row: 13 / 31;
+        background-color: #0d1117;
       }
 
       .five {
@@ -1390,7 +1428,7 @@ ul {
         background: none;
         border: none;
         font-size: 24px;
-        color: black;
+        color: white;
         cursor: pointer;
     }
 
