@@ -1,0 +1,137 @@
+---
+
+---
+
+<details>
+    <summary>
+      Ver Codigo Completo
+      <span class="flecha"><i class="fa-solid fa-arrow-down"></i></span>
+    </summary>
+    <div class="contenido">
+      <hr>
+      <div class="code-box">
+  <div class="code-header">JS</div>
+  <code class="language-js">
+    let numeros = [5, 3, 8, 4, 2];<br><br>
+
+    console.log("Array original:", numeros); <br><br>
+
+    function ordenarBurbuja(lista) &#123;<br><br>// Variable que indica si hubo cambios en la iteración <br>
+    let huboIntercambio; <br><br>
+
+    do &#123; <br><br>
+    // Reiniciamos el indicador de intercambio al comienzo del ciclo <br> 
+    huboIntercambio = false;<br><br>
+
+    for (let i = 0; i &#60; lista.length - 1; i++) &#123; <br><br>
+
+    let actual = lista[i];<br>
+      let siguiente = lista[i + 1];<br><br>
+
+      // Si el actual es mayor que el siguiente, se deben intercambiar <br>
+      if (actual &#62; siguiente) &#123; <br><br>
+
+      let temp = lista[i];<br>
+        lista[i] = lista[i + 1];<br>
+        lista[i + 1] = temp;<br><br>
+
+        // Indicamos que hubo un intercambio <br>
+        huboIntercambio = true;<br><br>
+
+        // Mostramos el estado actual del array (opcional para visualizar) <br>
+        console.log(`Intercambiado $&#123;actual&#125; y $&#123;siguiente&#125;:`, lista); <br>
+      <span style="padding-left: 10px;"></span>&#125; <br>
+    &#125;<br><br>
+
+    // Si hubo al menos un intercambio, se vuelve a recorrer el array <br>
+  &#125; while (huboIntercambio); <br><br>
+
+  return lista;<br>
+&#125;<br><br>
+
+// Ejecutamos la función y guardamos el resultado <br>
+let resultadoFinal = ordenarBurbuja(numeros); <br><br>
+
+// Mostramos el resultado final en consola <br>
+console.log("Array ordenado:", resultadoFinal);
+  </code>
+
+    </div>
+</details>
+
+
+
+
+<style>
+    .contenido {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease; /* Transición para mostrar/ocultar contenido */
+  text-align: left;
+}
+
+.flecha {
+  transform: rotate(0deg);
+  transition: transform 0.3s ease; /* Transición de la flecha */
+  font-size: 25px;
+}
+
+summary {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+details {
+  background: #061d25;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.541);
+  width: 80%; /* Se ajusta dinámicamente al tamaño de la pantalla */
+  max-width: 1000px; /* Evita que crezca demasiado en pantallas grandes */
+  padding: 20px;
+  color: aliceblue;
+  border:solid 1px #58a6ff;
+  border-radius: 20px;
+  margin: auto;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: 19px;
+  transition: all 0.3s ease-in-out;
+}
+
+@media (max-width: 600px) {
+
+  details {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  summary, .contenido {
+    font-size: 18px;
+  }
+}
+
+.code-box {
+  background-color: #1e1e1e;
+  color: #d4d4d4;
+  font-family: 'Fira Code', monospace;
+  border-radius: 8px;
+  overflow-x: auto;
+  padding: 16px;
+  margin: 20px 0;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.code-header {
+  background-color: #2d2d2d;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-bottom: 1px solid #444;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  margin: -16px -16px 16px -16px;
+}
+</style>
+
