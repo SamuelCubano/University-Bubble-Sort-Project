@@ -1,18 +1,226 @@
 ---
-const {title} = Astro.props
-const {info} = Astro.props 
+
 ---
 
 <details>
     <summary>
-      {title}
+      1. Variables
       <span class="flecha"><i class="fa-solid fa-arrow-down"></i></span>
     </summary>
     <div class="contenido">
       <hr>
-      <p>{info}</p>
+      <p>Una variable es un contenedor que guarda un valor. Ese valor puede cambiar durante la ejecución del programa (de ahí el nombre variable). Es como una etiqueta que le pones a una caja para saber qué hay dentro.</p>
+      <div class="code-box">
+  <div class="code-header">JS</div>
+  <code class="language-js">
+    let nombre = "Juan";<br><br>
+    const edad = 25;<br><br>
+    var ciudad = "Madrid";
+  </code>
+
     </div>
 </details>
+
+<details>
+    <summary>
+      2. Tipos de Datos
+      <span class="flecha"><i class="fa-solid fa-arrow-down"></i></span>
+    </summary>
+    <div class="contenido">
+      <hr>
+      <p>Los tipos de datos son las diferentes clases de valores que puedes usar para construir tus programas. Cada tipo define qué puedes hacer con ese valor y cómo se comporta.</p>
+      <div class="code-box">
+  <div class="code-header">JS</div>
+  <code class="language-js">
+    let numero = 42; // Número<br><br>
+    let texto = "Hola, mundo!"; // Cadena de texto<br><br>
+    let booleano = true; // Booleano (true o false)<br><br>
+    let objeto = &#123; nombre: "Juan", edad: 25 &#125;; // Objeto<br><br>
+    let arreglo = [1, 2, 3, 4, 5]; // Arreglo
+  </code>
+
+    </div>
+</details>
+
+
+<details>
+    <summary>
+      3. Operadores de Comparación
+      <span class="flecha"><i class="fa-solid fa-arrow-down"></i></span>
+    </summary>
+    <div class="contenido">
+      <hr>
+      <p>Los operadores de comparación son símbolos o palabras especiales que permiten realizar operaciones con valores o variables. Piensa en ellos como herramientas que el lenguaje usa para comparar, calcular, asignar o tomar decisiones.</p>
+      <div class="code-box">
+  <div class="code-header">JS</div>
+  <code class="language-js">
+    let a = 5;<br><br>
+    let b = 10;<br><br>
+    let resultado1 = (a == b); // Igualdad<br><br>
+    let resultado2 = (a != b); // Desigualdad<br><br>
+    let resultado3 = (a &gt; b); // Mayor que<br><br>
+    let resultado4 = (a &lt; b); // Menor que<br><br>
+    let resultado5 = (a &gt;= b); // Mayor o igual que<br><br>
+    let resultado6 = (a &lt;= b); // Menor o igual que<br><br>
+    let resultado7 = (a === b); // Igualdad estricta<br><br>
+    let resultado8 = (a !== b); // Desigualdad estricta<br><br>
+  </code>
+  </div>
+  </details>
+
+
+<details>
+    <summary>
+      4. Operadores Lógicos
+      <span class="flecha"><i class="fa-solid fa-arrow-down"></i></span>
+    </summary>
+    <div class="contenido">
+      <hr>
+      <p>Los operadores lógicos son símbolos que se usan para tomar decisiones basadas en condiciones. Son los que le dan lógica real al código, permiten combinar comparaciones y controlar el flujo del programa.</p>
+      <div class="code-box">
+  <div class="code-header">JS</div>
+  <code class="language-js">
+    let a = 5;<br><br>
+    let b = 10;<br><br>
+    let resultado1 = (a &gt; 0) && (b &gt; 0); // AND lógico<br><br>
+    let resultado2 = (a &lt; 0) || (b &gt; 0); // OR lógico<br><br>
+    let resultado3 = !(a &gt; b); // NOT lógico    
+  </code>
+
+    </div>
+</details>
+
+<details>
+    <summary>
+      5. Estructuras de Control o Condicionales
+      <span class="flecha"><i class="fa-solid fa-arrow-down"></i></span>
+    </summary>
+    <div class="contenido">
+      <hr>
+      <p>Las estructuras de control o Condicionales son instrucciones que permiten tomar decisiones y repetir acciones en el código. Son como las señales de tráfico que guían el flujo del programa.</p>
+      <div class="code-box">
+  <div class="code-header">JS</div>
+  <code class="language-js">
+    // Estructura condicional<br><br>
+    if (a &gt; b) &#123;<br>
+        console.log("a es mayor que b");<br>
+    &#125; else &#123;<br>
+        console.log("a no es mayor que b");<br>
+    &#125;<br><br>
+
+    // Estructura de bucle<br><br>
+    for (let i = 0; i &lt; 5; i++) &#123;<br>
+        console.log(i);<br>
+    &#125;
+  </code>
+  </div>
+  </details>
+
+
+
+  <details>
+    <summary>
+      6. Bucles
+      <span class="flecha"><i class="fa-solid fa-arrow-down"></i></span>
+    </summary>
+    <div class="contenido">
+      <hr>
+      <p>Los bucles son estructuras que permiten repetir un bloque de código varias veces. Son como una cinta transportadora que pasa por el mismo lugar una y otra vez.</p>
+      <div class="code-box">
+  <div class="code-header">JS</div>
+  <code class="language-js">
+    // Bucle for<br><br>
+    for (let i = 0; i &lt; 5; i++) &#123;<br>
+        console.log(i);<br>
+    &#125;<br><br>
+
+    // Bucle while<br><br>
+    let j = 0;<br>
+    while (j &lt; 5) &#123;<br>
+        console.log(j);<br>
+        j++;<br>
+    &#125;
+  </code>
+  </div>
+  </details>
+
+
+
+<details>
+    <summary>
+      7. Funciones
+      <span class="flecha"><i class="fa-solid fa-arrow-down"></i></span>
+    </summary>
+    <div class="contenido">
+      <hr>
+      <p>Las funciones son bloques de código que realizan una tarea específica. Puedes pensar en ellas como recetas que puedes seguir para obtener un resultado.</p>
+      <div class="code-box">
+  <div class="code-header">JS</div>
+  <code class="language-js">
+    function suma(a, b) &#123;<br>
+        return a + b;<br>
+    &#125;<br><br>
+
+    let resultado = suma(5, 10); // Llamada a la función
+    console.log(resultado); // Imprime 15
+  </code>
+  </div>
+  </details>
+
+
+<details>
+    <summary>
+      8. Objetos
+      <span class="flecha"><i class="fa-solid fa-arrow-down"></i></span>
+    </summary>
+    <div class="contenido">
+      <hr>
+      <p>Los objetos son colecciones de propiedades y métodos. Puedes pensar en ellos como cajas que contienen diferentes tipos de datos y funciones.</p>
+      <div class="code-box">
+  <div class="code-header">JS</div>
+  <code class="language-js">
+    let persona = &#123;<br>
+        nombre: "Juan",<br>
+        edad: 25,<br>
+        saludar: function() &#123;<br>
+            console.log("Hola, soy " + this.nombre);<br>
+        &#125;<br>
+    &#125;;<br><br>
+
+    persona.saludar(); // Llama al método saludar
+    // Imprime "Hola, soy Juan"
+  </code>
+  </div>
+  </details>
+
+<details>
+    <summary>
+      9. Arreglos
+      <span class="flecha"><i class="fa-solid fa-arrow-down"></i></span>
+    </summary>
+    <div class="contenido">
+      <hr>
+      <p>Los arreglos son colecciones de elementos. Puedes pensar en ellos como listas ordenadas de datos.</p>
+      <div class="code-box">
+  <div class="code-header">JS</div>
+  <code class="language-js">
+    let numeros = [1, 2, 3, 4, 5];<br><br>
+    console.log(numeros[0]); // Imprime 1<br><br>
+    console.log(numeros.length); // Imprime la longitud del arreglo (5)<br><br>
+    numeros.push(6); // Agrega un elemento al final del arreglo
+<br><br>
+    console.log(numeros); // Imprime [1, 2, 3, 4, 5, 6]
+  </code>
+  </div>
+  </details>
+
+
+
+
+
+
+
+
 
 <style>
     .contenido {
@@ -36,12 +244,13 @@ summary {
 }
 
 details {
-  background: linear-gradient(to bottom right, #00628b 1%, #0084a2 25%, #00b8bc 100%);
+  background: #061d25;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.541);
   width: 80%; /* Se ajusta dinámicamente al tamaño de la pantalla */
   max-width: 1000px; /* Evita que crezca demasiado en pantallas grandes */
   padding: 20px;
   color: aliceblue;
+  border:solid 1px #58a6ff;
   border-radius: 20px;
   margin: auto;
   margin-top: 15px;
@@ -60,6 +269,28 @@ details {
   summary, .contenido {
     font-size: 18px;
   }
+}
+
+.code-box {
+  background-color: #1e1e1e;
+  color: #d4d4d4;
+  font-family: 'Fira Code', monospace;
+  border-radius: 8px;
+  overflow-x: auto;
+  padding: 16px;
+  margin: 20px 0;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.code-header {
+  background-color: #2d2d2d;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-bottom: 1px solid #444;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  margin: -16px -16px 16px -16px;
 }
 </style>
 
