@@ -1,0 +1,187 @@
+---
+
+---
+<br><br>
+<div class="contenido">
+    <h2>Paso 1: Declaramos el array a ordenar</h2>
+      <div class="code-box">
+  <div class="code-header">JS</div>
+  <code class="language-js">
+    let numeros = [5, 3, 8, 4, 2];<br><br>
+
+    console.log("Array original:", numeros);
+  </code>
+  </div>
+
+  <br><br>
+<div class="contenido">
+    <h2>Paso 2: Creamos una función para ordenar usando el método de burbuja</h2>
+      <div class="code-box">
+  <div class="code-header">JS</div>
+    <code class="language-js">
+    function ordenarBurbuja(lista) &#123;<br><br>// Variable que indica si hubo cambios en la iteración <br>
+    let huboIntercambio;
+  </code>
+  </div>
+
+
+  <br><br>
+<div class="contenido">
+    <h2>Paso 3: Repetimos el proceso mientras haya cambios</h2>
+      <div class="code-box">
+  <div class="code-header">JS</div>
+  <code class="language-js">
+    do &#123; <br><br>
+    // Reiniciamos el indicador de intercambio al comienzo del ciclo <br> 
+    huboIntercambio = false;
+  </code>
+  </div>
+
+  <br><br>
+<div class="contenido">
+    <h2>Paso 4: Recorremos el array</h2>
+      <div class="code-box">
+  <div class="code-header">JS</div>
+  <code class="language-js">
+    for (let i = 0; i &#60; lista.length - 1; i++) &#123;
+  </code>
+  </div>
+
+  <br><br>
+<div class="contenido">
+    <h2>Paso 5: Comparamos el elemento actual con el siguiente</h2>
+      <div class="code-box">
+  <div class="code-header">JS</div>
+  <code class="language-js">
+    let actual = lista[i];<br>
+      let siguiente = lista[i + 1];<br><br>
+
+      // Si el actual es mayor que el siguiente, se deben intercambiar <br>
+      if (actual &#62; siguiente) &#123;
+  </code>
+  </div>
+
+  <br><br>
+<div class="contenido">
+    <h2>Paso 6: Intercambiamos los elementos manualmente</h2>
+      <div class="code-box">
+  <div class="code-header">JS</div>
+  <code class="language-js">
+    let temp = lista[i];<br>
+        lista[i] = lista[i + 1];<br>
+        lista[i + 1] = temp;<br><br>
+
+        // Indicamos que hubo un intercambio <br>
+        huboIntercambio = true;<br><br>
+
+        // Mostramos el estado actual del array (opcional para visualizar) <br>
+        console.log(`Intercambiado $&#123;actual&#125; y $&#123;siguiente&#125;:`, lista); <br>
+      <span style="padding-left: 10px;"></span>&#125; <br>
+    &#125;<br><br>
+
+    // Si hubo al menos un intercambio, se vuelve a recorrer el array <br>
+  &#125; while (huboIntercambio);
+  </code>
+  </div>
+
+    <br><br>
+<div class="contenido">
+    <h2>Paso 7: Retornamos la lista ordenada</h2>
+      <div class="code-box">
+  <div class="code-header">JS</div>
+  <code class="language-js">
+    return lista;<br>
+&#125;<br><br>
+
+// Ejecutamos la función y guardamos el resultado <br>
+let resultadoFinal = ordenarBurbuja(numeros); <br><br>
+
+// Mostramos el resultado final en consola <br>
+console.log("Array ordenado:", resultadoFinal);
+  </code>
+  </div>
+
+  <style>
+
+    .flecha {
+  transform: rotate(0deg);
+  transition: transform 0.3s ease; /* Transición de la flecha */
+  font-size: 25px;
+}
+
+summary {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+details {
+  background: #061d25;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.541);
+  width: 80%; /* Se ajusta dinámicamente al tamaño de la pantalla */
+  max-width: 1000px; /* Evita que crezca demasiado en pantallas grandes */
+  padding: 20px;
+  color: aliceblue;
+  border:solid 1px #58a6ff;
+  border-radius: 20px;
+  margin: auto;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: 18px;
+  transition: all 0.3s ease-in-out;
+}
+    .contenido {
+  text-align: left;
+}
+.contenido h2 {
+  font-size: 24px;
+  margin: 0;
+  color: #efefef;
+}
+
+.contenido p {
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+.contenido hr {
+  border: 1px solid #ccc;
+  margin: 10px 0;
+}
+
+
+@media (max-width: 600px) {
+
+  .contenido {
+    font-size: 18px;
+  }
+}
+
+.code-box {
+  background-color: #1e1e1e;
+  color: #d4d4d4;
+  font-family: 'Fira Code', monospace;
+  border-radius: 8px;
+  overflow-x: auto;
+  padding: 16px;
+  margin: 20px 0;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  font-size: 18px;
+}
+
+.code-header {
+  background-color: #2d2d2d;
+  color: yellow;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-bottom: 1px solid #444;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  margin: -16px -16px 16px -16px;
+}
+
+
+</style>
