@@ -27,10 +27,10 @@ import Card from "../components/fundamentos.astro";
                 <button class="close-menu" id="closeMenu">✖</button>
                 <a href="#">Bubble Sort</a>
                 <a href="#four">Fundamentos</a>
-                <a href="">Telemedicina</a>
-                <a href="">Noticias</a>
-                <a href="">Contacto</a>
-                <a href="">Preguntas Frecuentes</a>
+                <a href="#nine">Funcionamiento</a>
+                <a href="#fifteen">Elaboración</a>
+                <a href="">Interacción</a>
+                <a href="">Cuestionario</a>
             </div>
         </div>
     </header>
@@ -42,7 +42,7 @@ import Card from "../components/fundamentos.astro";
         <p class="info">El ordenamiento por burbuja (Bubble Sort) es un algoritmo de ordenamiento elemental que organiza los elementos de una lista comparando de manera repetitiva pares adyacentes y realizando intercambios si están en el orden incorrecto. Su nombre se debe a la forma en que los elementos más grandes van “flotando” hacia el final de la lista, como si fueran burbujas que ascienden a la superficie.</p>
 		<div class="botonera">
 			<a href="#four" class="btn">Conoce los Fundamentos Básicos</a>
-			<a href="#" class="btn">Continuar</a>
+			<a href="#nine" class="btn">Continuar</a>
 		  </div>
       </div>
 
@@ -57,110 +57,39 @@ import Card from "../components/fundamentos.astro";
       </div>
 
       <!-- Sección de Información de la Compañía -->
-      <div class="nine"></div>
+      <div class="nine" id="nine"></div>
 
       <!-- Sección de Servicios -->
-      <div class="ten">
-        <h2 class="subtitle">¿Cuáles Servicios te Ofrecemos?</h2>
-        <p class="info"><span style="padding-left: 30px;"></span> Ofrecemos una amplia gama de servicios médicos especializados, diseñados para brindarle la mejor atención con tecnología de vanguardia y un equipo altamente calificado.</p>
+      <div class="ten" id="ten">
+        <h2 class="subtitle">¿Cómo Funciona el Ordenamiento de Burbuja?</h2>
+        <p class="info">El Ordenamiento por burbuja es un algoritmo sencillo que se utiliza para organizar elementos en una lista. Su funcionamiento se basa en recorrer la lista varias veces y comparar elementos vecinos, intercambiándolos si están en el orden incorrecto. En cada pasada, los valores más grandes “suben” progresivamente hacia el final, como si fueran burbujas que emergen en un líquido. <br><br>
+Este proceso se repite hasta que ya no se necesita hacer más intercambios, lo que indica que la lista está completamente ordenada. Aunque su implementación es fácil de entender, no es eficiente para listas grandes debido a la cantidad de comparaciones necesarias.</p>
       </div>
 
-      <!-- Sección de Servicios -->
-      <div class="eleven">
-        <h3 class="servicios-nombre">MEDICINA GENERAL</h3>
-        <a href="/servicios/">
-          <button class="servicios-boton">Ver más</button>
-        </a>
-      </div>
-
-      <!-- Sección de Imagen de Servicios -->
-      <div class="eleveneleven"></div>
-
-      <!-- Sección de Servicios -->
-      <div class="twelve">
-        <h3 class="servicios-nombre">MEDICINA INTERNA</h3>
-        <a href="/servicios/">
-          <button class="servicios-boton">Ver más</button>
-        </a>
-      </div>
-
-      <!-- Sección de Imagen de Servicios -->
-      <div class="twelvetwelve"></div>
-
-      <!-- Sección de Servicios -->
-      <div class="thirteen">
-        <h3 class="servicios-nombre">GINECOLOGÍA Y OBSTETRICIA</h3>
-        <a href="/servicios/">
-          <button class="servicios-boton">Ver más</button>
-        </a>
-      </div>
-
-      <!-- Sección de Imagen de Servicios -->
-      <div class="thirteenthirteen"></div>
 
       <!-- Sección de Servicios -->
       <div class="fourteen">
-        <h3 class="servicios-nombre">TRAUMATOLOGIA</h3>
-        <a href="/servicios/">
-          <button class="servicios-boton">Ver más</button>
-        </a>
       </div>
 
-      <!-- Sección de Imagen de Servicios -->
-      <div class="fourteenfourteen"></div>
-
-      <!-- Sección de Servicios -->
-      <div class="fifteen">
-        <h3 class="servicios-nombre">CARDIOLOGIA</h3>
-        <a href="/servicios/">
-          <button class="servicios-boton">Ver más</button>
-        </a>
-      </div>
-
-      <!-- Sección de Imagen de Servicios -->
-      <div class="fifteenfifteen"></div>
-
-      <!-- Sección de Servicios -->
-      <div class="sixteen">
-        <h3 class="servicios-nombre">LABORATORIO</h3>
-        <a href="/servicios/">
-          <button class="servicios-boton">Ver más</button>
-        </a>
-      </div>
-
-      <!-- Sección de Imagen de Servicios -->
-      <div class="sixteensixteen"></div>
+      <div class="fifteen" id="fifteen"></div>
 
       <!-- Sección de Información de la Compañía -->
-      <div class="seventeen">
-        <h2 class="subtitle">Descubra más sobre nuestros servicios:</h2>
-        <a href="/servicios/">
-          <button class="general-boton">Haga clic aquí y explore nuestros servicios completos</button>
-        </a>
+      <div class="seventeen" id="seventeen">
+        <h2 class="subtitle">¿Cómo Elaborar el Ordenamiento de Burbuja paso a paso?</h2>
+        <p class="info">Para implementar el algoritmo de ordenamiento por burbuja, se siguen los siguientes pasos: <br><br></p>
+        <h3>En resumen:</h3>
+        <p class="info">1. Tienes un array. <br><br>
+        2. Lo recorres varias veces. <br><br>
+        3. Comparas pares consecutivos. <br><br>
+        4. Intercambias si es necesario. <br><br>
+        5. Repites hasta que quede ordenado. <hr>
+        </p>
+
       </div>
 
-      <!-- Sección de Slogan -->
-      <div class="eighteen">
-        <h2 class="slogan"><i>"Nos esforzamos por brindarle la mejor atención médica, con un enfoque en la excelencia, la innovación y la calidad en cada consulta, procedimiento y tratamiento."</i></h2>
-      </div>
 
       <!-- Sección de Información de la Compañía -->
       <div class="twenty"></div>
-
-      <!-- Sección de Novedades -->
-      <div class="twenty-one">
-        <h2 class="subtitle"> Novedades y Actualizaciones en IMHC</h2>
-        <p class="info"><span style="padding-left: 30px;"></span>Nos esforzamos por mantenerlo actualizado con las novedades en salud, avances médicos, nuevos servicios y consejos para su bienestar. Consulte nuestras noticias y descubra información relevante para usted y su familia.</p>
-      </div>
-
-      <!-- Sección de Noticias -->
-      <div class="twenty-two">Noticia medica (contenido importante) 1</div>
-
-      <!-- Sección de Noticias -->
-      <div class="twenty-three">Noticia medica (contenido importante) 2</div>
-
-      <!-- Sección de Noticias -->
-      <div class="twenty-four">Noticia medica (contenido importante) 3</div>
 
       <!-- Sección de Noticias -->
       <div class="twenty-five">Noticia medica (contenido importante) 4</div>
@@ -485,9 +414,10 @@ import Card from "../components/fundamentos.astro";
 
       .nine {
         grid-column: 1 / 22;
-        grid-row: 33 / 56;
+        grid-row: 31 / 44;
         background-color: #0d1117;
       }
+
 
       .ten {
         grid-column: 6 / 17;
@@ -496,141 +426,26 @@ import Card from "../components/fundamentos.astro";
       }
 
       .ten p.info {
-        text-align: left;
+        text-align: center;
         
       }
 
-      .eleven {
-        grid-column: 4 / 9;
-        grid-row: 41 / 44;
-        margin: 12px;
-        background: linear-gradient(to bottom right, #00628b 1%, #0084a2 25%, #00b8bc 100%);
-        border: solid 1px grey;
-        text-align: center;
-        border-bottom-left-radius: 15px;
-        border-bottom-right-radius: 15px;
-      }
-
-      .eleveneleven {
-        grid-column: 4 / 9;
-        grid-row: 37 / 42;
-        margin: 12px;
-        background-size: cover;
-        border: solid 1px grey;
-        border-top-left-radius: 15px;
-        border-top-right-radius: 15px;
-        text-align: center;
-      }
-
-      .twelve {
-        grid-column: 9 / 14;
-        grid-row: 41 / 44;
-        margin: 12px;
-        background: linear-gradient(to bottom right, #00628b 1%, #0084a2 25%, #00b8bc 100%);
-        border: solid 1px grey;
-        text-align: center;
-        border-bottom-left-radius: 15px;
-        border-bottom-right-radius: 15px;
-      }
-
-      .twelvetwelve {
-        grid-column: 9 / 14;
-        grid-row: 37 / 42;
-        margin: 12px;
-        background-size: cover;
-        border: solid 1px grey;
-        text-align: center;
-        border-top-left-radius: 15px;
-        border-top-right-radius: 15px;
-      }
-
-      .thirteen {
-        grid-column: 14 / 19;
-        grid-row: 41 / 44;
-        margin: 12px;
-        background: linear-gradient(to bottom right, #00628b 1%, #0084a2 25%, #00b8bc 100%);
-        border: solid 1px grey;
-        text-align: center;
-        border-bottom-left-radius: 15px;
-        border-bottom-right-radius: 15px;
-      }
-
-      .thirteenthirteen {
-        grid-column: 14 / 19;
-        grid-row: 37 / 42;
-        margin: 12px;
-        background-size: cover;
-        border: solid 1px grey;
-        text-align: center;
-        border-top-left-radius: 15px;
-        border-top-right-radius: 15px;
-      }
-
       .fourteen {
-        grid-column: 4 / 9;
-        grid-row: 48 / 51;
-        margin: 12px;
-        background: linear-gradient(to bottom right, #00628b 1%, #0084a2 25%, #00b8bc 100%);
-        border: solid 1px grey;
-        text-align: center;
-        border-bottom-left-radius: 15px;
-        border-bottom-right-radius: 15px;
-      }
-
-      .fourteenfourteen {
-        grid-column: 4 / 9;
-        grid-row: 44 / 49;
-        margin: 12px;
+        grid-column: 7 / 16;
+        grid-row: 37 / 44;
+        background-image: url(../pages/img/Bubble-sort-example-300px.gif);
         background-size: cover;
-        border: solid 1px grey;
-        text-align: center;
-        border-top-left-radius: 15px;
-        border-top-right-radius: 15px;
+        border: solid 3px #58a6ff;
+        border-radius: 15px;
+        margin-bottom: 55px;
       }
 
       .fifteen {
-        grid-column: 9 / 14;
-        grid-row: 48 / 51;
-        margin: 12px;
-        background: linear-gradient(to bottom right, #00628b 1%, #0084a2 25%, #00b8bc 100%);
-        border: solid 1px grey;
-        text-align: center;
-        border-bottom-left-radius: 15px;
-        border-bottom-right-radius: 15px;
+        grid-column: 1 / 22;
+        grid-row: 43 / 80;
+        background-color: #0d1117;
       }
 
-      .fifteenfifteen{
-        grid-column: 9 / 14;
-        grid-row: 44 / 49;
-        margin: 12px;
-        background-size: cover;
-        border: solid 1px grey;
-        text-align: center;
-        border-top-left-radius: 15px;
-        border-top-right-radius: 15px;
-      }
-
-      .sixteen {
-        grid-column: 14 / 19;
-        grid-row: 48 / 51;
-        margin: 12px;
-        background: linear-gradient(to bottom right, #00628b 1%, #0084a2 25%, #00b8bc 100%);
-        border: solid 1px grey;
-        text-align: center;
-        border-bottom-left-radius: 15px;
-        border-bottom-right-radius: 15px;
-      }
-
-      .sixteensixteen {
-        grid-column: 14 / 19;
-        grid-row: 44 / 49;
-        margin: 12px;
-        background-size: cover;
-        border: solid 1px grey;
-        text-align: center;
-        border-top-left-radius: 15px;
-        border-top-right-radius: 15px;
-      }
 
       .servicios-nombre {
         font-size: 20px;
@@ -682,16 +497,23 @@ import Card from "../components/fundamentos.astro";
 
       .seventeen {
         grid-column: 6 / 17;
-        grid-row: 52 / 55;
+        grid-row: 46 / 55;
         text-align: center;
       }
 
-      .eighteen {
-        grid-column: 1 / 22;
-        grid-row: 56 / 58;
-        background: linear-gradient(to bottom right, #00628b 1%, #0084a2 25%, #00b8bc 100%);
-        text-align: center;
+      .seventeen p {
+        text-align: left;
       }
+
+      .seventeen p.info {
+      }
+
+      .seventeen h3 {
+        font-size: 30px;
+        color: #e5e5e5;
+        text-align: left;
+      }
+
 
       .nineteen {
         grid-column: 1 / 22;
@@ -710,44 +532,6 @@ import Card from "../components/fundamentos.astro";
         background-size: cover;
       }
 
-      
-
-      .twenty-one {
-        grid-column: 6 / 17;
-        grid-row: 59 / 61;
-        text-align: center;
-      }
-
-      .twenty-one p {
-        text-align: left;
-      }
-
-      .twenty-two {
-        grid-column: 4 / 11;
-        grid-row: 61 / 66;
-        margin: 12px;
-        background-color: #ade0de;
-        border: solid 1px #061d25;
-        text-align: center;
-      }
-
-      .twenty-three {
-        grid-column: 4 / 11;
-        grid-row: 66 / 71;
-        margin: 12px;
-        background-color: #ade0de;
-        border: solid 1px #061d25;
-        text-align: center;
-      }
-
-      .twenty-four {
-        grid-column: 11 / 19;
-        grid-row: 61 / 71;
-        margin: 12px;
-        background-color: #ade0de;
-        border: solid 1px #061d25;
-        text-align: center;
-      }
 
       .twenty-five {
         grid-column: 4 / 12;
