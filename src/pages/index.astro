@@ -2,6 +2,7 @@
 import Card from "../components/fundamentos.astro";
 import Code from "../components/elaboracion.astro";
 import CodeCompleto from "../components/codigocompleto.astro";
+import Juego from "../components/juego.astro";
 ---
 
 <!DOCTYPE html>
@@ -31,7 +32,7 @@ import CodeCompleto from "../components/codigocompleto.astro";
                 <a href="#four">Fundamentos</a>
                 <a href="#nine">Funcionamiento</a>
                 <a href="#fifteen">Elaboración</a>
-                <a href="">Interacción</a>
+                <a href="#twenty-five">Aprendizaje</a>
                 <a href="">Cuestionario</a>
             </div>
         </div>
@@ -95,13 +96,29 @@ Este proceso se repite hasta que ya no se necesita hacer más intercambios, lo q
       <div class="twenty"></div>
 
       <!-- Sección de Noticias -->
-      <div class="twenty-five">Noticia medica (contenido importante) 4</div>
+      <div class="twenty-five" id="twenty-five"></div>
 
       <!-- Sección de Noticias -->
-      <div class="twenty-six">Noticia medica (contenido importante) 5</div>
+      <div class="twenty-six" id="twenty-six">
+        <h2 class="subtitle">¿Qué aprendemos cuando jugamos con el Ordenamiendo de Burbuja?</h2>
+        <p class="info">¡Gran pregunta! Cuando interactuamos con el proceso de Bubble Sort en tiempo real, descubrimos varias cosas interesantes sobre algoritmos y la lógica detrás de la organización de datos. Algunas revelaciones clave incluyen: <br> <br>
+        <h2 style="color:#e5e5e5; text-align: left;">- Visualización del Movimiento</h2>
+        <p class="info" style="color:#e5e5e5; text-align: left;"> Al jugar con Bubble Sort, podemos ver cómo los elementos "burbujear" hacia su posición correcta. Esto nos ayuda a entender qué significa comparar e intercambiar valores dentro de un conjunto de datos.</p><br>
+        <h2 style="color:#e5e5e5; text-align: left;">- Velocidad y Eficiencia</h2>
+        <p class="info" style="color:#e5e5e5; text-align: left;">Cuando manipulamos el proceso, podemos notar que Bubble Sort no es el algoritmo más rápido. Observamos que hace muchas comparaciones innecesarias, especialmente en listas ya casi ordenadas, lo que nos lleva a pensar en algoritmos más eficientes como Quick Sort o Merge Sort.
+</p><br>
+        <h2 style="color:#e5e5e5; text-align: left;">- El Patrón de Ordenamiento</h2>
+        <p class="info" style="color:#e5e5e5; text-align: left;">Cuando experimentamos con diferentes conjuntos de datos, vemos que el orden inicial afecta cuántas iteraciones necesita Bubble Sort. Si la lista ya está casi ordenada, el número de intercambios disminuye. Esto nos hace reflexionar sobre cuándo usarlo y cuándo optar por otras estrategias.
+</p><br>
+        <h2 style="color:#e5e5e5; text-align: left;">- Interacción y Aprendizaje Activo</h2>
+        <p class="info" style="color:#e5e5e5; text-align: left;">Cuando podemos modificar el algoritmo en tiempo real, aprendemos de manera intuitiva. La interacción nos permite entender cómo cambian los datos con cada paso, fortaleciendo nuestra capacidad de diseñar soluciones algorítmicas más inteligentes.
 
-      <!-- Sección de Noticias -->
-      <div class="twenty-seven">Noticia medica (contenido importante) 6</div>
+</p><br>
+      </div>
+
+      <div class="twenty-seven">
+        <Juego/>
+      </div>
 
       <!-- Sección de Información de la Compañía -->
       <div class="twenty-eight">
@@ -537,29 +554,33 @@ Este proceso se repite hasta que ya no se necesita hacer más intercambios, lo q
 
 
       .twenty-five {
-        grid-column: 4 / 12;
-        grid-row: 71 / 81 ;
-        margin: 12px;
-        background-color: #ade0de;
-        border: solid 1px #061d25;
+        grid-column: 1 / 23;
+        grid-row: 55 / 87 ;
+        background-color: #0d1117;
         text-align: center;
       }
 
       .twenty-six {
-        grid-column: 12 / 19;
-        grid-row: 71 / 76;
-        margin: 12px;
-        background-color: #ade0de;
-        border: solid 1px #061d25;
+        grid-column: 6 / 17;
+        grid-row: 57 / 76;
         text-align: center;
+        margin-top: 60px;
+        color: #e5e5e5;
       }
 
       .twenty-seven {
-        grid-column: 12 / 19;
+        grid-column: 6 / 17;
+        grid-row: 70 / 76;
+        text-align: center;
+        font-size: 30px;
+        margin-top: 60px;
+        color: #e5e5e5;
+      }
+
+      .twenty-seven {
+        grid-column: 6 / 17;
         grid-row: 76 / 81;
         margin: 12px;
-        background-color: #ade0de;
-        border: solid 1px #061d25;
         text-align: center;
       }
 
