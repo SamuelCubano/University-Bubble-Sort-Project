@@ -1,7 +1,3 @@
----
-// JuegoBurbujaV2.astro — Versión embebible con contenedor visual
----
-
 <div class="juego-burbuja-box">
   <p id="v2-message"></p>
   <div id="v2-array-container"></div>
@@ -30,6 +26,11 @@
     flex-wrap: nowrap;
     position: relative;
   }
+  .v2-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   .v2-element {
     width: 100px;
     height: 90px;
@@ -42,6 +43,11 @@
     font-size: 30px;
     transition: transform 0.5s ease, background-color 0.3s ease;
     position: relative;
+  }
+  .v2-index {
+    margin-top: 5px;
+    color: #d1d5db;
+    font-size: 14px;
   }
   .v2-swap {
     background-color: #ef4444 !important;
@@ -105,16 +111,34 @@
 
   function renderInitial() {
     v2Container.innerHTML = "";
-    v2Array.forEach((value) => {
+    v2Array.forEach((value, index) => {
+      const wrapper = document.createElement("div");
+      wrapper.className = "v2-wrapper";
+
       const div = document.createElement("div");
       div.className = "v2-element";
       div.textContent = value;
-      v2Container.appendChild(div);
+
+      const idx = document.createElement("div");
+      idx.className = "v2-index";
+      idx.textContent = `[${index}]`;
+
+      wrapper.appendChild(div);
+      wrapper.appendChild(idx);
+      v2Container.appendChild(wrapper);
+    });
+  }
+
+  function updateIndices() {
+    const wrappers = v2Container.children;
+    Array.from(wrappers).forEach((wrapper, index) => {
+      const idxDiv = wrapper.querySelector(".v2-index");
+      idxDiv.textContent = `[${index}]`;
     });
   }
 
   async function v2BubbleStep() {
-    const elements = v2Container.children;
+    const wrappers = v2Container.children;
 
     if (v2I >= v2Array.length) {
       v2Msg.textContent = "Ordenamiento completo ✅";
@@ -123,8 +147,10 @@
     }
 
     if (v2J < v2Array.length - v2I - 1) {
-      const el1 = elements[v2J];
-      const el2 = elements[v2J + 1];
+      const wrapper1 = wrappers[v2J];
+      const wrapper2 = wrappers[v2J + 1];
+      const el1 = wrapper1.firstChild;
+      const el2 = wrapper2.firstChild;
 
       el1.classList.add("v2-swap", "move-right");
       el2.classList.add("v2-swap", "move-left");
@@ -133,7 +159,8 @@
 
       if (v2Array[v2J] > v2Array[v2J + 1]) {
         [v2Array[v2J], v2Array[v2J + 1]] = [v2Array[v2J + 1], v2Array[v2J]];
-        v2Container.insertBefore(el2, el1);
+        v2Container.insertBefore(wrapper2, wrapper1);
+        updateIndices();
       }
 
       el1.classList.remove("move-right");
