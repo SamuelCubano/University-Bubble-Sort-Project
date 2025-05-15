@@ -8,10 +8,15 @@
       * {
         box-sizing: border-box;
       }
+
+      html {
+        background-color: #0d1117;
+      }
+
       body {
         margin: 0;
         padding: 0;
-        background: linear-gradient(to right, #2c3e50, #3498db);
+        background: url(/src/pages/img/fondoweb_transparente3.png);
         font-family: 'Segoe UI', sans-serif;
         color: #fff;
         display: flex;
@@ -26,7 +31,7 @@
         border-radius: 15px;
         max-width: 600px;
         width: 100%;
-        box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+        border: solid 2px #58a6ff;
         text-align: center;
         animation: bounceIn 0.6s ease;
       }
@@ -134,11 +139,11 @@
           texto: "¿Para qué sirve el método de burbuja?",
           opciones: [
             { texto: "a) Dibujar gráficos", valor: "a" },
-            { texto: "b) Ordenar elementos de una lista", valor: "b" },
-            { texto: "c) Enviar correos", valor: "c" },
-            { texto: "d) Crear juegos", valor: "d" }
+            { texto: "b) Enviar correos", valor: "b" },
+            { texto: "c) Crear juegos", valor: "c" },
+            { texto: "d) Ordenar elementos de una lista", valor: "d" }
           ],
-          correcta: "b"
+          correcta: "d"
         },
         {
           texto: "¿Cómo funciona el método de burbuja?",
@@ -164,11 +169,11 @@
           texto: "¿Cuándo se detiene el algoritmo de burbuja?",
           opciones: [
             { texto: "a) Después de una pasada", valor: "a" },
-            { texto: "b) Cuando no hay más intercambios", valor: "b" },
-            { texto: "c) Cuando se llena la memoria", valor: "c" },
+            { texto: "b) Cuando se llena la memoria", valor: "b" },
+            { texto: "c) Cuando no hay más intercambios", valor: "c" },
             { texto: "d) Cuando se borra el arreglo", valor: "d" }
           ],
-          correcta: "b"
+          correcta: "c"
         },
         {
           texto: "¿Cuál sería el resultado de aplicar Bubble Sort a [3, 1, 2]",
@@ -233,7 +238,6 @@
 
       function finalizarQuiz() {
   const porcentaje = Math.round((correctas / preguntas.length) * 100);
-  alert(`¡Terminaste el quiz! Obtuviste ${porcentaje}%`);
   contenedor.innerHTML = `<h3>Resultado final: ${porcentaje}%</h3>`;
   btnNext.style.display = "none";
   if (porcentaje >= 60) {
