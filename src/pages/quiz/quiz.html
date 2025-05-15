@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Bubble Sort</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(to right, #2c3e50, #3498db);
+        font-family: 'Segoe UI', sans-serif;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        padding: 20px;
+      }
+      .quiz-box {
+        background: #1c1c1c;
+        padding: 30px 40px;
+        border-radius: 15px;
+        max-width: 600px;
+        width: 100%;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+        text-align: center;
+        animation: bounceIn 0.6s ease;
+      }
+      @keyframes bounceIn {
+        0% { transform: scale(0.8); opacity: 0; }
+        100% { transform: scale(1); opacity: 1; }
+      }
+      .question {
+        font-size: 20px;
+        margin-bottom: 20px;
+      }
+      .options {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+      }
+      .options label {
+        display: block;
+        background: #34495e;
+        padding: 12px 15px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-size: 16px;
+        width: 100%;
+      }
+      .options input {
+        display: none;
+      }
+      .options label.correct {
+        background: #2ecc71 !important;
+        color: #fff;
+        transform: scale(1.02);
+      }
+      .options label.incorrect {
+        background: #e74c3c !important;
+        color: #fff;
+        transform: scale(1.02);
+      }
+      .btn {
+        margin-top: 20px;
+        padding: 12px 25px;
+        background: #2ecc71;
+        color: #fff;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 16px;
+        display: none;
+      }
+      .btn:hover {
+        background: #27ae60;
+      }
+      #badge {
+        display: none;
+        margin-top: 20px;
+        animation: fadeIn 1s ease-in-out;
+      }
+      #badge img {
+        width: 100px;
+        margin-top: 10px;
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      @media (max-width: 480px) {
+        .quiz-box {
+          padding: 20px;
+        }
+        .question {
+          font-size: 18px;
+        }
+        .options label {
+          font-size: 15px;
+          padding: 10px;
+        }
+        .btn {
+          width: 100%;
+          font-size: 16px;
+          padding: 12px;
+        }
+        #badge img {
+          width: 80px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="quiz-box">
+      <h2 id="quizTitle">Quiz: Método Burbuja 🧠</h2>
+      <div id="quizContainer"></div>
+      <button class="btn" id="btnNext" onclick="siguientePregunta()">Siguiente</button>
+      <div id="badge">
+  <h3>🏅 ¡Felicidades! Aprobaste 🥳</h3>
+</div>
+<div id="return-link" style="margin-top: 20px; display: none;">
+  <a href="/" class="btn" style="display: inline-block; text-decoration: none;">Volver</a>
+</div>
+    </div>
+    <script>
+      const preguntas = [
+        {
+          texto: "¿Para qué sirve el método de burbuja?",
+          opciones: [
+            { texto: "a) Dibujar gráficos", valor: "a" },
+            { texto: "b) Ordenar elementos de una lista", valor: "b" },
+            { texto: "c) Enviar correos", valor: "c" },
+            { texto: "d) Crear juegos", valor: "d" }
+          ],
+          correcta: "b"
+        },
+        {
+          texto: "¿Cómo funciona el método de burbuja?",
+          opciones: [
+            { texto: "a) Compara e intercambia elementos vecinos", valor: "a" },
+            { texto: "b) Copia la lista varias veces", valor: "b" },
+            { texto: "c) Elimina elementos", valor: "c" },
+            { texto: "d) Adivina el orden correcto", valor: "d" }
+          ],
+          correcta: "a"
+        },
+        {
+          texto: "¿Qué pasa en cada pasada del algoritmo?",
+          opciones: [
+            { texto: "a) Se imprime la lista", valor: "a" },
+            { texto: "b) El número más grande “sube” al final", valor: "b" },
+            { texto: "c) Se borra un número", valor: "c" },
+            { texto: "d) Nada", valor: "d" }
+          ],
+          correcta: "b"
+        },
+        {
+          texto: "¿Cuándo se detiene el algoritmo de burbuja?",
+          opciones: [
+            { texto: "a) Después de una pasada", valor: "a" },
+            { texto: "b) Cuando no hay más intercambios", valor: "b" },
+            { texto: "c) Cuando se llena la memoria", valor: "c" },
+            { texto: "d) Cuando se borra el arreglo", valor: "d" }
+          ],
+          correcta: "b"
+        },
+        {
+          texto: "¿Cuál sería el resultado de aplicar Bubble Sort a [3, 1, 2]",
+          opciones: [
+            { texto: "a) [1, 2, 3]", valor: "a" },
+            { texto: "b) [3, 2, 1]", valor: "b" },
+            { texto: "c) [1, 3, 2]", valor: "c" },
+            { texto: "d) [2, 1, 3]", valor: "d" }
+          ],
+          correcta: "a"
+        }
+      ];
+
+      let preguntaActual = 0;
+      let correctas = 0;
+
+      const contenedor = document.getElementById("quizContainer");
+      const btnNext = document.getElementById("btnNext");
+
+      function mostrarPregunta() {
+        btnNext.style.display = "none";
+        const q = preguntas[preguntaActual];
+        let html = `<div class="question">${q.texto}</div><div class="options">`;
+        q.opciones.forEach(op => {
+          html += `
+            <label onclick="evaluarRespuesta(this, '${op.valor}')">
+              <input type="radio" name="pregunta" value="${op.valor}"> ${op.texto}
+            </label>
+          `;
+        });
+        html += `</div>`;
+        contenedor.innerHTML = html;
+      }
+
+      function evaluarRespuesta(label, valorSeleccionado) {
+        const q = preguntas[preguntaActual];
+        const labels = document.querySelectorAll(".options label");
+        labels.forEach(l => {
+          l.onclick = null;
+          const input = l.querySelector("input");
+          input.disabled = true;
+          if (input.value === q.correcta) {
+            l.classList.add("correct");
+          } else if (input.value === valorSeleccionado && valorSeleccionado !== q.correcta) {
+            l.classList.add("incorrect");
+          }
+        });
+        if (valorSeleccionado === q.correcta) {
+          correctas++;
+        }
+        btnNext.style.display = "inline-block";
+      }
+
+      function siguientePregunta() {
+        preguntaActual++;
+        if (preguntaActual < preguntas.length) {
+          mostrarPregunta();
+        } else {
+          finalizarQuiz();
+        }
+      }
+
+      function finalizarQuiz() {
+  const porcentaje = Math.round((correctas / preguntas.length) * 100);
+  alert(`¡Terminaste el quiz! Obtuviste ${porcentaje}%`);
+  contenedor.innerHTML = `<h3>Resultado final: ${porcentaje}%</h3>`;
+  btnNext.style.display = "none";
+  if (porcentaje >= 60) {
+    document.getElementById("badge").style.display = "block";
+  }
+  document.getElementById("return-link").style.display = "block";
+contenedor.innerHTML = `<h3>Resultado final: ${porcentaje}%</h3>`;
+        btnNext.style.display = "none";
+        if (porcentaje >= 60) {
+          document.getElementById("badge").style.display = "block";
+        }
+      }
+
+      mostrarPregunta();
+    </script>
+  </body>
+</html>
