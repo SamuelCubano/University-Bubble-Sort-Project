@@ -7,9 +7,9 @@
       <div class="code-box">
   <div class="code-header">JS</div>
   <code class="language-js">
-    let numeros = [5, 3, 8, 4, 2];<br><br>
+    <span style="color: #ff0062;">let</span> <span style="color: rgb(253, 253, 170);">numeros</span> = <span style="color: #ff0062;">[</span><span style="color: rgb(113, 233, 44);">5, 3, 8, 4, 2</span><span style="color: #ff0062;">]</span>;<br><br>
 
-    console.log("Array original:", numeros);
+    <span style="color: rgb(112, 151, 233);">console.log</span><span style="color: #ff0062;">(</span><span style="color: rgb(113, 233, 44);">"Array original:"</span>, <span style="color: rgb(253, 253, 170);">numeros</span><span style="color: #ff0062;">)</span>;<br><br>
   </code>
   </div>
 
@@ -19,8 +19,8 @@
       <div class="code-box">
   <div class="code-header">JS</div>
     <code class="language-js">
-    function ordenarBurbuja(lista) &#123;<br><br>// Variable que indica si hubo cambios en la iteración <br>
-    let huboIntercambio;
+    <span style="color: rgb(112, 151, 233);">function</span> <span style="color: rgb(253, 253, 170);">ordenarBurbuja</span><span style="color: #ff0062;">(</span></span><span style="color: rgb(253, 253, 170);">ordenarBurbuja</span><span style="color: #ff0062;">(</span><span style="color: rgb(253, 253, 170);">lista</span><span style="color: #ff0062;">) &#123;</span><br><br>// Variable que indica si hubo cambios en la iteración <br>
+    <span style="color: #ff0062;">let</span> <span style="color: rgb(253, 253, 170);">huboIntercambio</span>;
   </code>
   </div>
 
@@ -31,9 +31,9 @@
       <div class="code-box">
   <div class="code-header">JS</div>
   <code class="language-js">
-    do &#123; <br><br>
+    <span style="color: rgb(112, 151, 233);">do</span> <span style="color: #ff0062;">&#123;</span> <br><br>
     // Reiniciamos el indicador de intercambio al comienzo del ciclo <br> 
-    huboIntercambio = false;
+    <span style="color: rgb(253, 253, 170);">huboIntercambio</span> = <span style="color: rgb(112, 151, 233);">false</span>;
   </code>
   </div>
 
@@ -43,7 +43,7 @@
       <div class="code-box">
   <div class="code-header">JS</div>
   <code class="language-js">
-    for (let i = 0; i &#60; lista.length - 1; i++) &#123;
+    <span style="color: rgb(112, 151, 233);">for</span> <span style="color: #ff0062;">(let</span> <span style="color: rgb(253, 253, 170);">i</span> = <span style="color: rgb(113, 233, 44);">0</span>; <span style="color: rgb(253, 253, 170);">i</span> &#60; <span style="color: rgb(253, 253, 170);">lista</span><span style="color: rgb(112, 151, 233);">.length</span> - <span style="color: rgb(113, 233, 44);">1</span>; <span style="color: rgb(253, 253, 170);">i</span>++<span style="color: #ff0062;">) &#123; </span>
   </code>
   </div>
 
@@ -53,11 +53,11 @@
       <div class="code-box">
   <div class="code-header">JS</div>
   <code class="language-js">
-    let actual = lista[i];<br>
-      let siguiente = lista[i + 1];<br><br>
+    <span style="color: #ff0062;">let</span><span style="color: rgb(253, 253, 170);"> actual</span>  = <span style="color: rgb(253, 253, 170);">lista</span> <span style="color: #ff0062;">[</span><span style="color: rgb(253, 253, 170);">i</span><span style="color: #ff0062;">]</span>;<br>
+      <span style="color: #ff0062;">let</span><span style="color: rgb(253, 253, 170);">siguiente</span>  = <span style="color: rgb(253, 253, 170);">lista</span><span style="color: #ff0062;">[</span><span style="color: rgb(253, 253, 170);">i</span> + <span style="color: rgb(113, 233, 44);">1</span><span style="color: #ff0062;">]</span>;<br><br> 
 
       // Si el actual es mayor que el siguiente, se deben intercambiar <br>
-      if (actual &#62; siguiente) &#123;
+      <span style="color: rgb(112, 151, 233);">if </span><span style="color: #ff0062;">(</span><span style="color: rgb(253, 253, 170);"> actual</span> &#62; <span style="color: rgb(253, 253, 170);">siguiente</span><span style="color: #ff0062;">)</span> <span style="color: #ff0062;">&#123;</span> <br>
   </code>
   </div>
 
@@ -67,20 +67,20 @@
       <div class="code-box">
   <div class="code-header">JS</div>
   <code class="language-js">
-    let temp = lista[i];<br>
-        lista[i] = lista[i + 1];<br>
-        lista[i + 1] = temp;<br><br>
+    <span style="color: #ff0062;">let</span><span style="color: rgb(253, 253, 170);"> temp</span> = <span style="color: rgb(253, 253, 170);">lista</span><span style="color: #ff0062;">[</span><span style="color: rgb(253, 253, 170);">i</span><span style="color: #ff0062;">]</span>;<br>
+        <span style="color: rgb(253, 253, 170);">lista</span><span style="color: #ff0062;">[</span><span style="color: rgb(253, 253, 170);">i</span><span style="color: #ff0062;">]</span> = <span style="color: rgb(253, 253, 170);">lista</span><span style="color: #ff0062;">[</span><span style="color: rgb(253, 253, 170);">i</span> + <span style="color: rgb(113, 233, 44);">1</span><span style="color: #ff0062;">]</span>;<br>
+        <span style="color: rgb(253, 253, 170);">lista</span><span style="color: #ff0062;">[</span><span style="color: rgb(253, 253, 170);">i</span> + <span style="color: rgb(113, 233, 44);">1</span><span style="color: #ff0062;">]</span> = <span style="color: rgb(253, 253, 170);"> temp</span>;<br><br>
 
         // Indicamos que hubo un intercambio <br>
-        huboIntercambio = true;<br><br>
+        <span style="color: rgb(253, 253, 170);">huboIntercambio</span> = <span style="color: rgb(112, 151, 233);">true</span>;<br><br>
 
         // Mostramos el estado actual del array (opcional para visualizar) <br>
-        console.log(`Intercambiado $&#123;actual&#125; y $&#123;siguiente&#125;:`, lista); <br>
-      <span style="padding-left: 10px;"></span>&#125; <br>
-    &#125;<br><br>
+        <span style="color: rgb(112, 151, 233);">console.log</span><span style="color: #ff0062;">(</span><span style="color: rgb(113, 233, 44);">`Intercambiado </span> <span style="color: #ff0062;">$&#123;</span><span style="color: rgb(253, 253, 170);"> actual</span><span style="color: #ff0062;">&#125;</span><span style="color: rgb(113, 233, 44);"> y </span>  <span style="color: #ff0062;">$&#123;</span><span style="color: rgb(253, 253, 170);">siguiente</span><span style="color: #ff0062;">&#125;</span><span style="color: rgb(113, 233, 44);">:`</span>, <span style="color: rgb(253, 253, 170);">lista</span><span style="color: #ff0062;">)</span>; <br>
+      <span style="padding-left: 10px;"></span><span style="color: #ff0062;">&#125;</span> <br>
+    <span style="color: #ff0062;">&#125;</span><br><br>
 
     // Si hubo al menos un intercambio, se vuelve a recorrer el array <br>
-  &#125; while (huboIntercambio);
+  <span style="color: #ff0062;">&#125;</span> <span style="color: rgb(112, 151, 233);">while</span> <span style="color: #ff0062;">(</span><span style="color: rgb(253, 253, 170);">huboIntercambio</span><span style="color: #ff0062;">)</span>;
   </code>
   </div>
 
@@ -90,14 +90,14 @@
       <div class="code-box">
   <div class="code-header">JS</div>
   <code class="language-js">
-    return lista;<br>
-&#125;<br><br>
+    <span style="color: rgb(112, 151, 233);">return</span> <span style="color: rgb(253, 253, 170);">lista</span>;<br>
+<span style="color: #ff0062;">&#125;</span><br><br>
 
 // Ejecutamos la función y guardamos el resultado <br>
-let resultadoFinal = ordenarBurbuja(numeros); <br><br>
+<span style="color: #ff0062;">let</span><span style="color: rgb(253, 253, 170);"> resultadoFinal</span> = <span style="color: rgb(253, 253, 170);">ordenarBurbuja</span><span style="color: #ff0062;">(</span><span style="color: rgb(253, 253, 170);">numeros</span><span style="color: #ff0062;">)</span>; <br><br>
 
 // Mostramos el resultado final en consola <br>
-console.log("Array ordenado:", resultadoFinal);
+<span style="color: rgb(112, 151, 233);">console.log</span><span style="color: #ff0062;">(</span><span style="color: rgb(113, 233, 44);">"Array ordenado:"</span>, <span style="color: rgb(253, 253, 170);">resultadoFinal</span><span style="color: #ff0062;">)</span>;
   </code>
   </div>
 
