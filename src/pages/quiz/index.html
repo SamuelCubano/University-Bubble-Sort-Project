@@ -127,12 +127,16 @@
       <div id="quizContainer"></div>
       <button class="btn" id="btnNext" onclick="siguientePregunta()">Siguiente</button>
       <div id="badge">
-  <h3>🏅 ¡Felicidades! Aprobaste 🥳</h3>
-</div>
-<div id="return-link" style="margin-top: 20px; display: none;">
-  <a href="/" class="btn" style="display: inline-block; text-decoration: none;">Volver</a>
-</div>
+        <h3>🏅 ¡Felicidades! Aprobaste 🥳</h3>
+      </div>
+      <div id="return-link" style="margin-top: 20px; display: none;">
+        <a href="/" class="btn" style="display: inline-block; text-decoration: none;">Volver</a>
+      </div>
     </div>
+
+    <!-- Confetti Script -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
     <script>
       const preguntas = [
         {
@@ -236,19 +240,41 @@
         }
       }
 
+      function lanzarConfeti() {
+        const duration = 3 * 1000;
+        const end = Date.now() + duration;
+
+        (function frame() {
+          confetti({
+            particleCount: 5,
+            angle: 60,
+            spread: 55,
+            origin: { x: 0 }
+          });
+          confetti({
+            particleCount: 5,
+            angle: 120,
+            spread: 55,
+            origin: { x: 1 }
+          });
+
+          if (Date.now() < end) {
+            requestAnimationFrame(frame);
+          }
+        })();
+      }
+
       function finalizarQuiz() {
-  const porcentaje = Math.round((correctas / preguntas.length) * 100);
-  contenedor.innerHTML = `<h3>Resultado final: ${porcentaje}%</h3>`;
-  btnNext.style.display = "none";
-  if (porcentaje >= 60) {
-    document.getElementById("badge").style.display = "block";
-  }
-  document.getElementById("return-link").style.display = "block";
-contenedor.innerHTML = `<h3>Resultado final: ${porcentaje}%</h3>`;
+        const porcentaje = Math.round((correctas / preguntas.length) * 100);
+        contenedor.innerHTML = `<h3>Resultado final: ${porcentaje}%</h3>`;
         btnNext.style.display = "none";
+
         if (porcentaje >= 60) {
           document.getElementById("badge").style.display = "block";
+          lanzarConfeti();
         }
+
+        document.getElementById("return-link").style.display = "block";
       }
 
       mostrarPregunta();
