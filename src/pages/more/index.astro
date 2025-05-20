@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://kit.fontawesome.com/cf1fb60fea.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Oxanium:wght@200..800&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Press+Start+2P&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rouge+Script&display=swap" rel="stylesheet">
+  <title>Explicación del Método de Burbuja</title>
+  <style>
+    html {
+        scroll-behavior: smooth;
+        background-color: #0d1117;
+      }
+
+    body {
+      background: url(../img/fondoweb_transparente3.png);
+      color: #f1f1f1;
+      font-family: "Nunito Sans", serif;
+      margin: 0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    h1, h2, h3 {
+      font-size: 40px;
+        margin: 20px 15px;
+        color: #e5e5e5;
+        text-shadow: 1px 1px 10px #e5e5e5;
+    }
+
+    p {
+      line-height: 1.6;
+      font-size: 20px;
+    }
+
+    ul {
+      margin-top: 10px;
+      padding-left: 20px;
+      font-size: 20px;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    .array-demo {
+      display: flex;
+      gap: 15px;
+      margin: 20px 0;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .box {
+      width: 50px;
+      height: 50px;
+      background: #58a6ff;
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 8px;
+      font-size: 20px;
+    }
+
+    .arrow {
+      text-align: center;
+      font-size: 24px;
+      color: #2ecc71;
+    }
+
+    .highlight {
+      background-color: #f39c12 !important;
+    }
+
+    .info-box {
+      background-color: #1e1e1e;
+      border-left: 4px solid #58a6ff;
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 5px;
+      font-size: 20px;
+    }
+
+    .menu-toggle, .close-menu {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 30px;
+        color: white;
+        cursor: pointer;
+    }
+
+    @media (max-width: 600px) {
+      .box {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+      }
+
+      p, li {
+        font-size: 20px;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+
+      h2 {
+        font-size: 28px;
+      }
+
+      .menu-toggle {
+            display: block;
+        }
+
+
+        header.scrolled .links a {
+        color: #e5e5e5; /* Color de los enlaces cuando se desplaza */
+      }
+        .links {
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 250px;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.9);
+            flex-direction: column;
+            align-items: start;
+            padding: 60px 20px;
+            transition: left 0.3s ease-in-out;
+        }
+
+        .links a {
+            display: block;
+            font-size: 20px;
+            padding: 10px 0;
+            color: white;
+        }
+
+        .links.active {
+            left: 0;
+            color: white;
+        }
+
+        .close-menu {
+            display: block;
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 28px;
+            color:white;
+        }
+
+        .sd {
+            font-size: 18px;
+        }
+
+        .container {
+            padding: 20px;
+            padding-top: 0;
+        }
+
+        .footer-bottom .derechos{
+    margin: 0;
+  font-size: 14px;
+}
+    }
+
+    header {
+        background-color: rgba(0, 0, 0, 0);
+        color: white;
+        margin: 0;
+        padding-top: 0;
+        padding-bottom: 10px;
+        margin-bottom: 0;
+        grid-column: 1 / 22;
+        grid-row: 1 ;
+        position: -webkit-sticky; /* Para compatibilidad con Safari */
+        position: sticky;
+        top: 0;
+        transition: background-color 0.3s ease ; /* Animación suave del fondo */
+        z-index: 1000;
+      }
+
+      header.scrolled {
+        background-color: #161b22; /* Fondo blanco cuando se desplaza */
+        color: white;
+        box-shadow: 0px 6px 5px 0px rgba(0, 0, 0, 0.25);
+        -webkit-box-shadow: 0px 6px 5px 0px #58a6ff50;
+      }
+
+      .sd {
+        text-align: center;
+        margin: 0;
+        background-color:  #161b22;
+        padding-bottom: 8px;
+        padding-top: 9px;
+		text-decoration: none;
+		transition: 0.3s ;
+		font-size: 17px;
+      }
+
+	  .sd a {
+		color: white;
+		text-decoration: none;
+		transition: 0.3s;
+	  }
+
+	  .sd a:hover {
+		color: #58a6ff;
+		text-decoration: none;
+	  }
+
+    .links {
+        display: flex;
+        justify-content: center; /* Centrar horizontalmente */
+        align-items: flex-end; /* Alinear al fondo del contenedor */
+        height: 50px; /* Ajusta la altura según sea necesario */
+        margin-top: 10px;
+      }
+
+      .links a {
+        margin: 0 10px; /* Espaciado entre enlaces */
+        color: white;
+        font-size: 19px;  
+        text-decoration: none;
+        padding-left: 10px;
+        padding-right: 10px;
+        transition: 0.3s;
+      }
+
+      .links a:hover {
+        transform: scale(1.10); /* Efecto de ligera expansión */
+      }
+
+      .links a:not(:has(.link-logo)):hover {
+        color: black; /* Color de los enlaces al pasar el cursor */
+        border: solid 1px #061d25;
+        background-color: white;
+        border-radius: 15px;
+      }
+
+      header.scrolled .links a {
+        color: white; /* Color de los enlaces cuando se desplaza */
+      }
+
+
+      header.scrolled .links a:hover {
+        color: #0084a2; /* Color de los enlaces cuando se desplaza */
+      }
+
+      .footer {
+    background-color: #061d25;
+    border-top: solid 2px #58a6ff;
+    color: white;
+    padding: 30px 20px;
+    text-align: left;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1200px;
+    min-height: 180px;
+    margin: auto;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+    margin: 10px;
+}
+
+.footer-section h3 {
+    color: #6cbfc6;
+    margin-bottom: 10px;
+}
+
+.footer-section a {
+    color: #ade0de;
+    text-decoration: none;
+    transition: color 0.3s; 
+}
+
+.footer-section li {
+    margin: 10px; 
+}
+
+.footer-section a:hover {
+    color: #ffffff;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #6cbfc6;
+}
+
+.footer-bottom .derechos {
+    margin: 0;
+  font-size: 16px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+  </style>
+</head>
+<body>
+  <header>
+        <p class="sd"><a href="https://github.com/SamuelCubano/University-Bubble-Sort-Project" target="_blank">🖐 Visita nuestro proyecto y apoyanos con una ✨</a></p>
+        <div id="elements">
+            <button class="menu-toggle" id="menuToggle">☰</button>
+            <div class="links" id="menu">
+                <button class="close-menu" id="closeMenu">✖</button>
+                <a href="/">Regresar</a>
+            </div>
+        </div>
+    </header>
+  <div class="container">
+    <h1>Método de Burbuja (Bubble Sort)</h1>
+
+    <p>El <strong>método de burbuja</strong> es un algoritmo de ordenamiento sencillo que recorre una lista varias veces y compara elementos adyacentes. Si están en el orden incorrecto, los <strong>intercambia</strong>. Repite este proceso hasta que la lista esté completamente ordenada.</p>
+
+    <h2>¿Cómo funciona?</h2>
+    <ul>
+      <li>Compara dos elementos vecinos.</li>
+      <li>Si están en el orden correcto, los deja como están.</li>
+      <li>Si están en el orden incorrecto, los intercambia.</li>
+      <li>Al final de cada pasada, el mayor "burbujea" al final de la lista.</li>
+      <li>Se repite hasta que no se hagan más intercambios.</li>
+    </ul>
+
+    <div class="info-box">
+      <strong>Dato curioso:</strong> Aunque el método de burbuja es fácil de entender, rara vez se usa en aplicaciones reales debido a su bajo rendimiento en listas grandes. Sin embargo, es excelente para enseñar los conceptos básicos de algoritmos y estructuras de datos.
+    </div>
+
+    <h2>Ejemplo Visual</h2>
+    <p>Lista original:</p>
+    <div class="array-demo">
+      <div class="box highlight">5</div>
+      <div class="box highlight">3</div>
+      <div class="box">8</div>
+      <div class="box">2</div>
+      <div class="box">1</div>
+    </div>
+    <div class="arrow">⬇ Intercambia 5 y 3</div>
+    <div class="array-demo">
+      <div class="box">3</div>
+      <div class="box">5</div>
+      <div class="box">8</div>
+      <div class="box">2</div>
+      <div class="box">1</div>
+    </div>
+
+    <h2>Ventajas</h2>
+    <ul>
+      <li>Fácil de entender e implementar.</li>
+      <li>Ideal para enseñar algoritmos de ordenamiento.</li>
+      <li>Funciona bien con listas pequeñas o casi ordenadas.</li>
+    </ul>
+
+    <h2>Desventajas</h2>
+    <ul>
+      <li>Poco eficiente en listas grandes.</li>
+      <li>Realiza muchas comparaciones incluso cuando la lista ya está casi ordenada.</li>
+    </ul>
+
+    <h2>¿Por qué es importante el Método de Burbuja?</h2>
+    <p>El método de burbuja es uno de los algoritmos de ordenamiento más simples y conocidos. Aunque no es el más eficiente, su importancia radica en su valor educativo. Es comúnmente utilizado como introducción a los algoritmos porque ayuda a comprender:</p>
+    <ul>
+      <li>El concepto de comparación e intercambio de elementos.</li>
+      <li>Cómo funcionan los bucles anidados.</li>
+      <li>La lógica detrás del ordenamiento.</li>
+    </ul>
+    <p>Además, permite visualizar fácilmente cómo los datos se reorganizan paso a paso, lo que lo hace perfecto para enseñar programación estructurada y pensamiento lógico.</p>
+
+    <h2>Aplicaciones y funcionalidad en el área de programación</h2>
+    <p>Aunque no se utiliza en producción para ordenar grandes volúmenes de datos, sí se usa en:</p>
+    <ul>
+      <li>Ambientes educativos para enseñar algoritmos básicos.</li>
+      <li>Simulaciones visuales de algoritmos para facilitar el aprendizaje.</li>
+      <li>Evaluaciones técnicas donde se busca analizar el razonamiento lógico del candidato.</li>
+    </ul>
+    <p>También es útil en dispositivos de bajo rendimiento o sistemas embebidos donde se procesan pequeños volúmenes de datos.</p>
+  </div>
+
+  <footer class="footer">
+      
+          <div class="footer-bottom">
+              <p class="derechos">© 2025 SamCub_dev - Todos los derechos reservados.</p>
+          </div>
+      </footer> 
+
+  <script>
+  const menuToggle = document.getElementById("menuToggle");
+  if (menuToggle) {
+    menuToggle.addEventListener("click", function() {
+    const menu = document.getElementById("menu");
+    if (menu) {
+      menu.classList.add("active");
+    }
+  });
+
+  }
+  const closeMenu = document.getElementById("closeMenu");
+  if (closeMenu) {
+    closeMenu.addEventListener("click", function() {
+      const menu = document.getElementById("menu");
+      if (menu) {
+        menu.classList.remove("active");
+      }
+    });
+  }
+  </script>
+
+    <script>
+      window.addEventListener('scroll', function() {
+        var header = document.querySelector('header');
+        if (header) {
+          if (window.scrollY > 0) {
+            header.classList.add('scrolled');
+          } else {
+            header.classList.remove('scrolled');
+          }
+        }
+      });
+    </script>
+</body>
+</html>

@@ -23,7 +23,7 @@ import Juego from "../components/juego.astro";
 
       <!-- Header Barra -->
       <header>
-        <p class="sd"><a href="https://github.com/SamuelCubano/University-Bubble-Sort-Project" target="_blank">🖐 Visita nuestro proyecto y apoyanos con una ✨</a></p>
+        <p class="sd"><a href="https://github.com/SamuelCubano/University-Bubble-Sort-Project">🖐 Visita nuestro proyecto y apoyanos con una ✨</a></p>
         <div id="elements">
             <button class="menu-toggle" id="menuToggle">☰</button>
             <div class="links" id="menu">
@@ -42,7 +42,7 @@ import Juego from "../components/juego.astro";
 
       <div class="twotwo">
         <h2 class="subtitle">Ordenamiento de Burbuja <br>(Bubble Sort)</h2>
-        <p class="info">El ordenamiento por burbuja (Bubble Sort) es un algoritmo de ordenamiento elemental que organiza los elementos de una lista comparando de manera repetitiva pares adyacentes y realizando intercambios si están en el orden incorrecto. Su nombre se debe a la forma en que los elementos más grandes van “flotando” hacia el final de la lista, como si fueran burbujas que ascienden a la superficie. Tranquilo, si ahora no te hace mucho sentido, más adelante lo vas a entender mejor.</p>
+        <p class="info">El ordenamiento por burbuja (Bubble Sort) es un algoritmo de ordenamiento elemental que organiza los elementos de una lista comparando de manera repetitiva pares adyacentes y realizando intercambios si están en el orden incorrecto. Su nombre se debe a la forma en que los elementos más grandes van “flotando” hacia el final de la lista, como si fueran burbujas que ascienden a la superficie. Tranquilo, si ahora no te hace mucho sentido, más adelante lo vas a entender mejor. <a href="/more" target=”_blank” class="more">Ver más.</a></p>
 		<div class="botonera">
 			<a href="#four" class="btn">Conoce los Fundamentos Básicos</a>
 			<a href="#nine" class="btn">Continuar</a>
@@ -196,6 +196,17 @@ Este proceso se repite hasta que ya no se necesita hacer más intercambios, lo q
 		transition: 0.3s ;
 		font-size: 17px;
       }
+
+    .more {
+      color: white;
+      text-decoration: none;
+      transition: 0.3s;
+    } 
+
+    .more:hover {
+		color: #58a6ff;
+		text-decoration: none;
+	  }
 
 	  .sd a {
 		color: white;
